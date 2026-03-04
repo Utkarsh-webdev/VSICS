@@ -271,11 +271,27 @@
   <section class="gallery-strip" id="gallery">
     <div class="container">
       <h2>Campus Glimpses</h2>
-      <div class="gallery-grid">
-        <img src="assets/1.png" alt="Campus Activity 1">
-        <img src="assets/1.png" alt="Campus Activity 2">
-        <img src="assets/1.png" alt="Campus Activity 3">
+      <div class="gallery-slider">
+        <button type="button" class="gallery-nav prev" id="galleryPrev" aria-label="Previous campus image">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <div class="gallery-viewport">
+          <div class="gallery-track" id="galleryTrack">
+            <img src="assets/img2.jpg" alt="Campus Glimpse 1">
+            <img src="assets/img3.jpg" alt="Campus Glimpse 2">
+            <img src="assets/img4.jpg" alt="Campus Glimpse 3">
+            <img src="assets/img5.png" alt="Campus Glimpse 4">
+            <img src="assets/img6.png" alt="Campus Glimpse 5">
+            <img src="assets/img7.png" alt="Campus Glimpse 6">
+          </div>
+        </div>
+
+        <button type="button" class="gallery-nav next" id="galleryNext" aria-label="Next campus image">
+          <i class="bi bi-chevron-right"></i>
+        </button>
       </div>
+      <div class="gallery-dots" id="galleryDots"></div>
     </div>
   </section>
 

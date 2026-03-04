@@ -5,6 +5,10 @@ const noticeList = document.getElementById("noticeList");
 const scrollUpBtn = document.getElementById("scrollUp");
 const scrollDownBtn = document.getElementById("scrollDown");
 const toggleScrollBtn = document.getElementById("toggleScroll");
+const galleryTrack = document.getElementById("galleryTrack");
+const galleryPrev = document.getElementById("galleryPrev");
+const galleryNext = document.getElementById("galleryNext");
+const galleryDots = document.getElementById("galleryDots");
 
 const closeMobileMenu = () => {
     if (mainNav) {
@@ -149,4 +153,109 @@ if (noticeList) {
 
     startAutoScroll();
     window.addEventListener("beforeunload", stopAutoScroll);
+}
+
+if (galleryTrack) {
+    const slides = Array.from(galleryTrack.querySelectorAll("img"));
+    const getVisibleCount = () => {
+        if (window.innerWidth <= 640) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+    };
+
+    let visibleCount = getVisibleCount();
+    let maxIndex = Math.max(0, slides.length - visibleCount);
+    let currentIndex = 0;
+    let sliderTimer = null;
+
+    const buildDots = () => {
+        if (!galleryDots) return;
+        galleryDots.innerHTML = "";
+        for (let i = 0; i <= maxIndex; i += 1) {
+            const dot = document.createElement("button");
+            dot.type = "button";
+            dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+            if (i === currentIndex) dot.classList.add("active");
+            dot.addEventListener("click", () => {
+                currentIndex = i;
+                updateSlider();
+                restartAutoSlide();
+            });
+            galleryDots.appendChild(dot);
+        }
+    };
+
+    const updateSlider = () => {
+        const viewportWidth = galleryTrack.parentElement
+            ? galleryTrack.parentElement.clientWidth
+            : 0;
+        const slideWidth = viewportWidth / visibleCount;
+        galleryTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        if (galleryDots) {
+            Array.from(galleryDots.children).forEach((dot, i) => {
+                dot.classList.toggle("active", i === currentIndex);
+            });
+        }
+    };
+
+    const goNext = () => {
+        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+        updateSlider();
+    };
+
+    const goPrev = () => {
+        currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+        updateSlider();
+    };
+
+    const startAutoSlide = () => {
+        stopAutoSlide();
+        sliderTimer = setInterval(goNext, 3000);
+    };
+
+    const stopAutoSlide = () => {
+        if (sliderTimer) {
+            clearInterval(sliderTimer);
+            sliderTimer = null;
+        }
+    };
+
+    const restartAutoSlide = () => {
+        stopAutoSlide();
+        startAutoSlide();
+    };
+
+    if (galleryNext) {
+        galleryNext.addEventListener("click", () => {
+            goNext();
+            restartAutoSlide();
+        });
+    }
+    if (galleryPrev) {
+        galleryPrev.addEventListener("click", () => {
+            goPrev();
+            restartAutoSlide();
+        });
+    }
+
+    galleryTrack.addEventListener("mouseenter", stopAutoSlide);
+    galleryTrack.addEventListener("mouseleave", startAutoSlide);
+
+    const onResize = () => {
+        const nextVisible = getVisibleCount();
+        if (nextVisible !== visibleCount) {
+            visibleCount = nextVisible;
+            maxIndex = Math.max(0, slides.length - visibleCount);
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            buildDots();
+        }
+        updateSlider();
+    };
+
+    buildDots();
+    updateSlider();
+    startAutoSlide();
+
+    window.addEventListener("resize", onResize);
+    window.addEventListener("beforeunload", stopAutoSlide);
 }
