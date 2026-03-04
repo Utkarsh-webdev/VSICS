@@ -9,6 +9,10 @@ const galleryTrack = document.getElementById("galleryTrack");
 const galleryPrev = document.getElementById("galleryPrev");
 const galleryNext = document.getElementById("galleryNext");
 const galleryDots = document.getElementById("galleryDots");
+const testimonialTrack = document.getElementById("testimonialTrack");
+const testimonialPrev = document.getElementById("testimonialPrev");
+const testimonialNext = document.getElementById("testimonialNext");
+const testimonialDots = document.getElementById("testimonialDots");
 
 const closeMobileMenu = () => {
     if (mainNav) {
@@ -186,11 +190,9 @@ if (galleryTrack) {
     };
 
     const updateSlider = () => {
-        const viewportWidth = galleryTrack.parentElement
-            ? galleryTrack.parentElement.clientWidth
-            : 0;
-        const slideWidth = viewportWidth / visibleCount;
-        galleryTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        galleryTrack.style.setProperty("--slides-per-view", String(visibleCount));
+        const translatePercent = (currentIndex * 100) / visibleCount;
+        galleryTrack.style.transform = `translateX(-${translatePercent}%)`;
         if (galleryDots) {
             Array.from(galleryDots.children).forEach((dot, i) => {
                 dot.classList.toggle("active", i === currentIndex);
@@ -258,4 +260,105 @@ if (galleryTrack) {
 
     window.addEventListener("resize", onResize);
     window.addEventListener("beforeunload", stopAutoSlide);
+}
+
+if (testimonialTrack) {
+    const cards = Array.from(testimonialTrack.querySelectorAll(".testimonial-card"));
+    const getVisibleCards = () => (window.innerWidth <= 700 ? 1 : 2);
+
+    let visibleCards = getVisibleCards();
+    let maxIndex = Math.max(0, cards.length - visibleCards);
+    let currentIndex = 0;
+    let testimonialTimer = null;
+
+    const renderDots = () => {
+        if (!testimonialDots) return;
+        testimonialDots.innerHTML = "";
+        for (let i = 0; i <= maxIndex; i += 1) {
+            const dot = document.createElement("button");
+            dot.type = "button";
+            dot.setAttribute("aria-label", `Go to testimonial ${i + 1}`);
+            dot.classList.toggle("active", i === currentIndex);
+            dot.addEventListener("click", () => {
+                currentIndex = i;
+                updateTestimonials();
+                restartTestimonials();
+            });
+            testimonialDots.appendChild(dot);
+        }
+    };
+
+    const updateTestimonials = () => {
+        const viewportWidth = testimonialTrack.parentElement
+            ? testimonialTrack.parentElement.clientWidth
+            : 0;
+        const cardWidth = viewportWidth / visibleCards;
+        testimonialTrack.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        if (testimonialDots) {
+            Array.from(testimonialDots.children).forEach((dot, index) => {
+                dot.classList.toggle("active", index === currentIndex);
+            });
+        }
+    };
+
+    const nextTestimonial = () => {
+        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+        updateTestimonials();
+    };
+
+    const prevTestimonial = () => {
+        currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+        updateTestimonials();
+    };
+
+    const startTestimonials = () => {
+        stopTestimonials();
+        testimonialTimer = setInterval(nextTestimonial, 3600);
+    };
+
+    const stopTestimonials = () => {
+        if (testimonialTimer) {
+            clearInterval(testimonialTimer);
+            testimonialTimer = null;
+        }
+    };
+
+    const restartTestimonials = () => {
+        stopTestimonials();
+        startTestimonials();
+    };
+
+    if (testimonialNext) {
+        testimonialNext.addEventListener("click", () => {
+            nextTestimonial();
+            restartTestimonials();
+        });
+    }
+
+    if (testimonialPrev) {
+        testimonialPrev.addEventListener("click", () => {
+            prevTestimonial();
+            restartTestimonials();
+        });
+    }
+
+    testimonialTrack.addEventListener("mouseenter", stopTestimonials);
+    testimonialTrack.addEventListener("mouseleave", startTestimonials);
+
+    const onTestimonialResize = () => {
+        const nextVisible = getVisibleCards();
+        if (nextVisible !== visibleCards) {
+            visibleCards = nextVisible;
+            maxIndex = Math.max(0, cards.length - visibleCards);
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            renderDots();
+        }
+        updateTestimonials();
+    };
+
+    renderDots();
+    updateTestimonials();
+    startTestimonials();
+    window.addEventListener("resize", onTestimonialResize);
+    window.addEventListener("beforeunload", stopTestimonials);
 }
