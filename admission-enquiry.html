@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission Enquiry | VSICS Kanpur</title>
+  <link rel="icon" type="image/png" href="assets/title-logo-removebg-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <div class="top-info-bar">
+    <div class="container">
+      <div class="info-left">
+        <span><i class="bi bi-mortarboard-fill"></i> Quality Education</span>
+        <span><i class="bi bi-briefcase-fill"></i> Top Placements</span>
+        <span><i class="bi bi-currency-rupee"></i> Affordable Cost</span>
+      </div>
+      <div class="info-center">
+        <img src="assets/logo.png" alt="VSICS Anniversary Logo">
+      </div>
+      <div class="info-right">
+        <a href="index.html">Back to Home</a>
+        <a href="assets/brochure.pdf" target="_blank" rel="noopener">Brochure</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="assets/new.png" alt="VSICS Kanpur">
+      </a>
+      <a href="index.html" class="admission-btn">Home</a>
+    </div>
+  </header>
+
+  <section class="enquiry-hero">
+    <div class="container">
+      <h1>Admission Enquiry</h1>
+      <p>Fill this form and our admission team will contact you shortly.</p>
+    </div>
+  </section>
+
+  <section class="enquiry-page">
+    <div class="container enquiry-grid">
+      <article class="enquiry-info-card">
+        <h2>Why Choose VSICS</h2>
+        <ul>
+          <li><i class="bi bi-check2-circle"></i> Career-focused UG & PG programs</li>
+          <li><i class="bi bi-check2-circle"></i> Placement assistance and interview training</li>
+          <li><i class="bi bi-check2-circle"></i> Experienced faculty and modern labs</li>
+          <li><i class="bi bi-check2-circle"></i> Scholarships and affordable fee structure</li>
+        </ul>
+        <div class="enquiry-contact">
+          <p><i class="bi bi-telephone"></i> +91-512-2604592</p>
+          <p><i class="bi bi-envelope"></i> vsefcomp@vsef.org</p>
+        </div>
+      </article>
+
+      <form id="admissionForm" class="enquiry-form-card">
+        <h2>Student Details</h2>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" name="fullName" type="text" required>
+          </div>
+          <div class="form-field">
+            <label for="mobile">Mobile Number</label>
+            <input id="mobile" name="mobile" type="tel" pattern="[0-9]{10}" maxlength="10" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="form-field">
+            <label for="course">Preferred Course</label>
+            <select id="course" name="course" required>
+              <option value="">Select Course</option>
+              <option value="BBA">BBA</option>
+              <option value="BCA">BCA</option>
+              <option value="MBA">MBA</option>
+              <option value="MCA">MCA</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="city">City</label>
+            <input id="city" name="city" type="text" required>
+          </div>
+          <div class="form-field">
+            <label for="state">State</label>
+            <input id="state" name="state" type="text" required>
+          </div>
+          <div class="form-field full-width">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your interest (optional)"></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary-solid">Submit Enquiry</button>
+          <a href="assets/brochure.pdf" target="_blank" rel="noopener" class="btn-primary-outline dark-outline">View Brochure</a>
+        </div>
+        <p id="formStatus" class="form-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="footer-bottom">
+      <div class="container bottom-flex">
+        <img src="assets/Web-VSICSkanpur-22222.png" alt="VSICS Footer Logo">
+        <p>© 2020 All Rights Reserved. Developed by <span>VSICS IT Cell</span></p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -362,3 +362,37 @@ if (testimonialTrack) {
     window.addEventListener("resize", onTestimonialResize);
     window.addEventListener("beforeunload", stopTestimonials);
 }
+
+const admissionForm = document.getElementById("admissionForm");
+const formStatus = document.getElementById("formStatus");
+
+if (admissionForm) {
+    admissionForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(admissionForm);
+        const fullName = String(formData.get("fullName") || "").trim();
+        const mobile = String(formData.get("mobile") || "").trim();
+        const email = String(formData.get("email") || "").trim();
+        const course = String(formData.get("course") || "").trim();
+        const city = String(formData.get("city") || "").trim();
+        const state = String(formData.get("state") || "").trim();
+
+        const isValidMobile = /^[0-9]{10}$/.test(mobile);
+        const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        if (!fullName || !isValidMobile || !isValidEmail || !course || !city || !state) {
+            if (formStatus) {
+                formStatus.textContent = "Please fill all required fields correctly.";
+                formStatus.className = "form-status error";
+            }
+            return;
+        }
+
+        if (formStatus) {
+            formStatus.textContent = "Thank you! Your enquiry has been submitted successfully.";
+            formStatus.className = "form-status success";
+        }
+
+        admissionForm.reset();
+    });
+}

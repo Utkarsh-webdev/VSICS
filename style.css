@@ -953,3 +953,139 @@ body {
     flex-wrap: wrap;
 }
 
+/* Admission Enquiry Page */
+.enquiry-hero {
+    background: linear-gradient(110deg, #1b2b58, #2b4587);
+    color: #fff;
+    padding: 48px 0;
+}
+
+.enquiry-hero h1 {
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(34px, 4.5vw, 52px);
+    margin-bottom: 8px;
+}
+
+.enquiry-hero p {
+    color: #dbe5ff;
+}
+
+.enquiry-page {
+    padding: 44px 0 64px;
+}
+
+.enquiry-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.enquiry-info-card,
+.enquiry-form-card {
+    background: #fff;
+    border: 1px solid #dde5fa;
+    border-radius: 14px;
+    box-shadow: 0 12px 24px rgba(21, 37, 83, 0.08);
+    padding: 22px;
+}
+
+.enquiry-info-card h2,
+.enquiry-form-card h2 {
+    color: #1e2d59;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 14px;
+}
+
+.enquiry-info-card ul li {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #3f4765;
+    line-height: 1.45;
+}
+
+.enquiry-info-card i {
+    color: #2a4aa0;
+}
+
+.enquiry-contact {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed #ccd7f3;
+}
+
+.enquiry-contact p {
+    margin-bottom: 8px;
+    color: #2f3757;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-field label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #2c3457;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    border: 1px solid #cfd8f0;
+    border-radius: 10px;
+    padding: 11px 12px;
+    font: inherit;
+    color: #243052;
+    background: #fff;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: #3b5fbf;
+    box-shadow: 0 0 0 3px rgba(59, 95, 191, 0.12);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.dark-outline {
+    color: #27418a;
+    border-color: #a6b7e8;
+    background: #f2f6ff;
+}
+
+.form-status {
+    margin-top: 12px;
+    font-weight: 600;
+    min-height: 20px;
+}
+
+.form-status.success {
+    color: #18794e;
+}
+
+.form-status.error {
+    color: #b42318;
+}
+

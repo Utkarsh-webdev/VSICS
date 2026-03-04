@@ -42,6 +42,10 @@
     .outcomes-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .enquiry-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 900px) {
@@ -279,6 +283,23 @@
     .footer-top .container,
     .footer-bottom .container {
         width: min(1240px, 94%);
+    }
+
+    .enquiry-hero {
+        padding: 34px 0;
+    }
+
+    .enquiry-info-card h2,
+    .enquiry-form-card h2 {
+        font-size: 28px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
     }
 }
 
