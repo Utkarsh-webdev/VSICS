@@ -46,6 +46,22 @@
     .enquiry-grid {
         grid-template-columns: 1fr;
     }
+
+    .media-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .media-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .album-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-wall {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 900px) {
@@ -300,6 +316,78 @@
 
     .form-actions {
         flex-direction: column;
+    }
+
+    .media-hero {
+        padding: 42px 0;
+    }
+
+    .media-intro {
+        font-size: 16px;
+    }
+
+    .media-article-card {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .media-cover img {
+        height: 240px;
+    }
+
+    .media-article-card h2 {
+        font-size: 28px;
+    }
+
+    .media-article-card h3,
+    .media-side-card h3 {
+        font-size: 24px;
+    }
+
+    .media-quote {
+        padding: 18px;
+        font-size: 18px;
+    }
+
+    .media-story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .media-story-grid img {
+        height: 220px;
+    }
+
+    .gallery-page-hero {
+        padding: 40px 0;
+    }
+
+    .album-card {
+        min-height: 260px;
+    }
+
+    .album-card-content {
+        padding: 18px;
+    }
+
+    .album-card-content h2 {
+        font-size: 28px;
+    }
+
+    .album-section {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .album-section-head h2 {
+        font-size: 28px;
+    }
+
+    .photo-wall {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-wall img {
+        height: 240px;
     }
 }
 

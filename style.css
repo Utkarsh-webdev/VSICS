@@ -1089,3 +1089,373 @@ body {
     color: #b42318;
 }
 
+/* Media Page */
+.media-hero {
+    background:
+        linear-gradient(120deg, rgba(19, 35, 78, 0.92), rgba(39, 63, 128, 0.86)),
+        url("assets/img3.jpg") center/cover no-repeat;
+    color: #fff;
+    padding: 64px 0;
+}
+
+.media-hero-content {
+    max-width: 820px;
+}
+
+.media-kicker {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.media-hero h1 {
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(34px, 4.4vw, 58px);
+    line-height: 1.08;
+    margin-bottom: 14px;
+}
+
+.media-intro {
+    max-width: 700px;
+    font-size: 18px;
+    line-height: 1.65;
+    color: #dde6ff;
+}
+
+.media-page {
+    padding: 48px 0 64px;
+}
+
+.media-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 24px;
+    align-items: start;
+}
+
+.media-article-card,
+.media-side-card {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #dde5fa;
+    box-shadow: 0 16px 30px rgba(19, 34, 80, 0.08);
+}
+
+.media-article-card {
+    padding: 24px;
+    border-radius: 18px;
+}
+
+.media-cover {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.media-cover img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+.media-meta {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    color: #5a6482;
+    font-size: 14px;
+}
+
+.media-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.media-article-card h2,
+.media-article-card h3,
+.media-side-card h3 {
+    color: var(--primary);
+    font-family: "DM Serif Display", Georgia, serif;
+}
+
+.media-article-card h2 {
+    font-size: 34px;
+    margin-bottom: 14px;
+}
+
+.media-article-card h3 {
+    font-size: 28px;
+    margin: 24px 0 14px;
+}
+
+.media-article-card p {
+    color: #505975;
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+.media-quote {
+    margin: 24px 0;
+    padding: 22px 24px;
+    border-left: 4px solid #f0b524;
+    background: linear-gradient(90deg, #f6f8ff, #ffffff);
+    color: #24335e;
+    font-size: 20px;
+    font-family: "DM Serif Display", Georgia, serif;
+    line-height: 1.6;
+}
+
+.media-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.media-highlights div {
+    padding: 18px;
+    border: 1px solid #dde5f6;
+    border-radius: 14px;
+    background: #f9fbff;
+}
+
+.media-highlights i {
+    color: #284899;
+    font-size: 28px;
+}
+
+.media-highlights h4 {
+    margin: 10px 0 8px;
+    color: #1f2d59;
+    font-size: 19px;
+}
+
+.media-highlights p {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.media-story-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.media-story-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.media-sidebar {
+    display: grid;
+    gap: 18px;
+}
+
+.media-side-card {
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.media-side-card h3 {
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.media-side-card p {
+    color: #4d5774;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.media-side-link {
+    display: block;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #f5f8ff;
+    border: 1px solid #dbe4fa;
+    color: #23408e;
+    font-weight: 700;
+}
+
+.media-side-list li + li {
+    margin-top: 10px;
+}
+
+.media-side-list a {
+    color: #36415f;
+    line-height: 1.6;
+}
+
+/* Gallery Listing + Album Pages */
+.gallery-actions {
+    margin-top: 18px;
+    text-align: center;
+}
+
+.gallery-page-hero {
+    background:
+        linear-gradient(120deg, rgba(20, 34, 76, 0.92), rgba(37, 61, 124, 0.86)),
+        url("assets/img2.jpg") center/cover no-repeat;
+    color: #fff;
+    padding: 62px 0;
+}
+
+.gallery-page-hero h1 {
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(34px, 4.4vw, 58px);
+    line-height: 1.08;
+    margin-bottom: 12px;
+}
+
+.gallery-page-hero p:last-child {
+    max-width: 720px;
+    color: #dde6ff;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.gallery-page,
+.album-page {
+    padding: 48px 0 64px;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.album-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    min-height: 320px;
+    border-radius: 18px;
+    border: 1px solid #dce4f7;
+    box-shadow: 0 16px 32px rgba(21, 35, 78, 0.08);
+}
+
+.album-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.album-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 18, 43, 0.08), rgba(10, 18, 43, 0.74));
+}
+
+.album-card:hover img {
+    transform: scale(1.06);
+}
+
+.album-card-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 22px;
+    color: #fff;
+}
+
+.album-label {
+    margin-bottom: 8px;
+    color: #ffd979;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.album-card-content h2 {
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.album-card-content span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+}
+
+.album-tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+}
+
+.album-tab {
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #eef3ff;
+    border: 1px solid #d9e3fb;
+    color: #29458f;
+    font-weight: 700;
+}
+
+.album-section {
+    margin-bottom: 30px;
+    padding: 24px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid #dde5fa;
+    box-shadow: 0 14px 28px rgba(18, 33, 77, 0.07);
+}
+
+.album-section-head h2 {
+    color: #1e2d59;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.album-section-head p {
+    color: #5a6482;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.photo-wall {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.photo-wall img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid #dde5f8;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.photo-wall img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 20px rgba(28, 48, 105, 0.12);
+}
+
