@@ -261,6 +261,7 @@ ul {
     .info-right {
         justify-content: center;
         flex-wrap: wrap;
+        gap: 12px;
     }
 
     .nav-wrap {
