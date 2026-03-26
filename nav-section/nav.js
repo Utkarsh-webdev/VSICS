@@ -1,12 +1,18 @@
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".main-nav");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("nav-open");
+});
+
 const dropdowns = document.querySelectorAll(".has-dropdown");
 
 dropdowns.forEach(dropdown => {
-  const button = dropdown.querySelector(".nav-link");
+  const btn = dropdown.querySelector(".nav-link");
 
-  button.addEventListener("click", (e) => {
+  btn.addEventListener("click", (e) => {
     e.stopPropagation();
 
-    // close others
     dropdowns.forEach(d => {
       if (d !== dropdown) d.classList.remove("active");
     });
@@ -15,7 +21,6 @@ dropdowns.forEach(dropdown => {
   });
 });
 
-// close on outside click
 document.addEventListener("click", () => {
   dropdowns.forEach(d => d.classList.remove("active"));
 });
