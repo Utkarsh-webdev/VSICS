@@ -62,6 +62,23 @@
     .photo-wall {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .srijan-hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .srijan-hero-collage {
+        max-width: 760px;
+    }
+
+    .srijan-story-grid,
+    .srijan-zone-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .srijan-highlights-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 900px) {
@@ -175,6 +192,27 @@
     .cta-banner .container {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .srijan-tabs {
+        position: static;
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+    .srijan-stats,
+    .srijan-story-grid,
+    .srijan-zone-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .srijan-hero-collage {
+        grid-template-columns: 1fr;
+    }
+
+    .srijan-collage-card,
+    .srijan-collage-card.tall {
+        min-height: 240px;
     }
 }
 
@@ -361,6 +399,36 @@
         padding: 40px 0;
     }
 
+    .srijan-copy h1 {
+        font-size: 36px;
+    }
+
+    .srijan-intro {
+        font-size: 16px;
+    }
+
+    .srijan-actions {
+        flex-direction: column;
+    }
+
+    .hero-cta {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .srijan-stat {
+        padding: 16px;
+    }
+
+    .highlight-feature {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
+    .highlight-feature img {
+        height: 220px;
+    }
+
     .album-card {
         min-height: 260px;
     }
@@ -388,6 +456,11 @@
 
     .photo-wall img {
         height: 240px;
+    }
+
+    .srijan-note-card,
+    .srijan-zone-card {
+        padding: 18px;
     }
 }
 
