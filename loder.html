@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Bookshelf Loader</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loader.css">
 </head>
 <body>
 
@@ -28,9 +28,6 @@
   </div>
 </div>
 
-<!-- Main Content -->
- 
-
 <script>
 
   window.addEventListener("load", () => {
@@ -42,6 +39,7 @@
 
     setTimeout(() => {
       loader.style.display = "none";
+      window.location.href = "index.html";
       content.style.display = "block";
     }, 600);
 
