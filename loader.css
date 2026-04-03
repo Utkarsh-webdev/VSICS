@@ -1,20 +1,10 @@
 /* 🔥 LOADER FULL SCREEN */
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #1e6cc7;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
 
-  z-index: 9999;
-  transition: opacity 0.6s ease;
+/* hide state */
+.loader.hide {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* ✅ LOGO */
@@ -205,73 +195,62 @@
   }
 }
 
-/* 📱 MOBILE FIX */
+/* 📱 PERFECT MOBILE FIX */
 @media (max-width: 600px) {
 
+  /* Center everything properly */
+  .loader {
+    gap: 18px;
+    padding: 20px;
+  }
+
+  /* Logo */
   .logo-container img {
-    width: 140px;
+    width: 130px;
+    max-width: 75%;
   }
 
+  /* Scale whole animation instead of breaking sizes */
   .bookshelf_wrapper {
-    transform: scale(0.75);
+    transform: scale(0.7);
+    transform-origin: center;
   }
 
+  /* Keep original proportions (IMPORTANT FIX) */
   .books_list {
-    width: 200px;
+    width: 300px; /* don't shrink manually */
   }
 
   .book_item {
-    width: 28px;
-    height: 90px;
-    border-width: 3px;
+    width: 40px;
+    height: 120px;
+    border-width: 4px;
   }
 
+  /* Adjust positions slightly for balance */
   .first {
-    height: 100px;
-    top: -100px;
+    height: 140px;
+    top: -130px;
   }
 
   .fourth {
-    height: 95px;
-    top: -95px;
+    height: 130px;
+    top: -120px;
   }
 
   .fifth {
-    height: 75px;
-    top: -75px;
+    height: 100px;
+    top: -95px;
   }
 
   .sixth {
-    height: 100px;
-    top: -100px;
+    height: 140px;
+    top: -130px;
   }
 
-  .first::before,
-  .first::after,
-  .sixth::before {
-    height: 3px;
-  }
-
-  .third::before,
-  .third::after,
-  .sixth::after {
-    width: 8px;
-    height: 8px;
-    border-width: 3px;
-    left: 6px;
-  }
-
-  .second::before,
-  .second::after,
-  .fifth::before,
-  .fifth::after,
-  .fourth::before {
-    height: 10px;
-    border-width: 3px;
-  }
-
+  /* Shelf */
   .shelf {
-    width: 200px;
-    height: 3px;
+    width: 300px;
+    height: 4px;
   }
 }
