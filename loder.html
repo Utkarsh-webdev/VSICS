@@ -38,7 +38,8 @@
     loader.style.opacity = "0";
 
     setTimeout(() => {
-      window.location.href = "index.html";
+      loader.style.display = "none";
+      content.style.display = "block";
     }, 600);
 
   }, 3500); // 3.5 seconds
