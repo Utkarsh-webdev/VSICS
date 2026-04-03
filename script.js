@@ -400,16 +400,13 @@ if (admissionForm) {
 
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
-  const content = document.getElementById("main-content");
 
   setTimeout(() => {
     loader.style.opacity = "0";
-    loader.style.transform = "scale(1.1)";
 
     setTimeout(() => {
       loader.style.display = "none";
-      content.style.opacity = "block";
     }, 600);
 
-  }, 3000);
+  }, 3000); // 3 sec
 });
